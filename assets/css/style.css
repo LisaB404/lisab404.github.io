@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(45deg, rgb(121, 144, 157), rgb(157, 189, 204));
+  height: auto;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(17, 17, 191);
+  font-size: 1rem;
+}
+
+a:hover {
+  color: rgb(157, 189, 204);
+}
+
+/*HEADER*/
+.header {
+  background-color: white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: white;
+}
+
+.header ul a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(17, 17, 191);
+}
+
+.header ul a:hover {
+  background-color: rgb(17, 17, 191);
+  color: white;
+}
+
+.logo:hover {
+  color: rgb(157, 189, 204);
+}
+
+.header .logo {
+  float: left;
+  font-size: 25px;
+  padding: 10px 20px;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.header .menu-icon {
+  padding: 28px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+  background-color: rgb(17, 17, 191);
+  display: block;
+  width: 18px;
+  height: 2px;
+  position: relative;
+  transition: background-color 0.2s ease-out;
+}
+
+.header .menu-icon .nav-icon::before,
+.header .menu-icon .nav-icon::after {
+  background-color: rgb(17, 17, 191);
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+}
+
+.header .menu-icon .nav-icon::before {
+  top: 5px;
+}
+
+.header .menu-icon .nav-icon::after {
+  top: -5px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background-color: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/*HERO PAGE*/
+.presentation {
+  padding: 1em;
+}
+
+.mypic {
+  width: 50%;
+  height: auto;
+  border-radius: 50px;
+  margin-left: 5em;
+}
+
+.skills-label, .digital-label, .languages-label {
+  color: rgb(17, 17, 191);
+  font-weight: 600;
+  padding-top: 1em;
+}
+
+.digital-label, .languages-label {
+  margin-top: 2em;
+}
+
+.progress {
+  width: 80vw;
+  height: 2em;
+}
+
+.progress-bar {
+  background-color: rgb(17, 17, 191);
+  opacity: 0.8;
+}
+
+.social-icons {
+  width: -moz-max-content;
+  width: max-content;
+}
+.social-icons a {
+  padding-right: 0.5em;
+  font-size: 1.5em;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: rgb(17, 17, 191);
+  padding: 10px;
+  overflow: hidden;
+}
+footer .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-icons a {
+  color: rgb(17, 17, 191);
+}
+
+.social-icons a:hover {
+  color: rgb(157, 189, 204);
+}
+
+/*MY PROJECTS PAGE*/
+main {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.project-label {
+  color: rgb(17, 17, 191);
+  font-weight: 600;
+  padding-left: 5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.card {
+  border-color: rgb(17, 17, 191);
+}
+
+.card-title {
+  color: rgb(17, 17, 191);
+}
+
+.btn-primary {
+  background-color: rgb(17, 17, 191);
+}
+
+/*CONTACTS*/
+.contacts {
+  color: rgb(17, 17, 191);
+  font-weight: 600;
+  padding: 1.5em;
+  margin-left: 2.5em;
+}
+
+.form-label {
+  color: rgb(17, 17, 191);
+  font-weight: 600;
+}
+
+/*ABOUT ME*/
+.cvlabel {
+  color: rgb(17, 17, 191);
+  font-weight: 600;
+  padding: 1em;
+}
+
+.me {
+  padding: 0em 1em 0em 1em;
+}
+
+.card-header {
+  background-color: rgb(17, 17, 191);
+  color: white;
+}
+
+/*RESPONSIVE PER DESKTOP*/
+@media screen and (min-width: 768px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+  /*HERO PAGE*/
+  .presentation {
+    padding: 1.5em;
+    margin-top: 3em;
+    margin-left: 8em;
+    line-height: 1.5;
+  }
+  .presentation h1 {
+    padding-bottom: 2px;
+  }
+  .pic {
+    margin-top: 2em;
+    max-height: 50vh;
+    max-width: auto;
+  }
+  .mypic {
+    width: 80%;
+    height: auto;
+  }
+  .skills {
+    margin-top: 2em;
+    margin-left: 8em;
+  }
+  .progress {
+    width: 60vw;
+    height: 2em;
+  }
+  /*CONTACTS*/
+  .contacts {
+    margin-left: 3em;
+  }
+  .form {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+}/*# sourceMappingURL=style.css.map */
